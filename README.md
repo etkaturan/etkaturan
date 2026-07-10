@@ -65,8 +65,8 @@
 ## GitHub Analytics
 
 <div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=etkaturan&show_icons=true&hide_border=true&bg_color=070707&title_color=22d3ee&icon_color=a78bfa&text_color=c9d1d9&ring_color=22d3ee&rank_icon=github" alt="GitHub stats" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=etkaturan&layout=compact&hide_border=true&bg_color=070707&title_color=22d3ee&text_color=c9d1d9&langs_count=8" alt="Top languages" />
+  <img height="170" src="https://github-stats-extended.vercel.app/api?username=etkaturan&show_icons=true&hide_border=true&bg_color=070707&title_color=22d3ee&icon_color=a78bfa&text_color=c9d1d9&ring_color=22d3ee&rank_icon=github" alt="GitHub stats" />
+  <img height="170" src="https://github-stats-extended.vercel.app/api/top-langs/?username=etkaturan&layout=compact&hide_border=true&bg_color=070707&title_color=22d3ee&text_color=c9d1d9&langs_count=8" alt="Top languages" />
 </div>
 
 <br/>
