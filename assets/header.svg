@@ -1,0 +1,63 @@
+<svg width="900" height="240" viewBox="0 0 900 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Etka Turan — Creative Developer">
+  <style>
+    .name { font: 700 44px 'Segoe UI', Ubuntu, 'Helvetica Neue', sans-serif; fill: #E8EEF2; }
+    .role { font: 500 19px 'Segoe UI', Ubuntu, sans-serif; fill: #2E86C8; letter-spacing: 1px; }
+    .sub  { font: 400 14px 'Cascadia Code', 'JetBrains Mono', Consolas, monospace; fill: #7E93A3; }
+    .coord { font: 400 11px 'Cascadia Code', Consolas, monospace; fill: #5E7486; }
+    .status { font: 600 12px 'Segoe UI', Ubuntu, sans-serif; fill: #C89217; letter-spacing: 2px; }
+
+    .flight {
+      stroke: #2E86C8;
+      stroke-width: 2;
+      stroke-dasharray: 2 9;
+      stroke-linecap: round;
+      fill: none;
+      animation: fly 22s linear infinite;
+    }
+    @keyframes fly { to { stroke-dashoffset: -330; } }
+
+    .pulse { animation: pulse 2.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+    .fadein { opacity: 0; animation: fade 0.9s ease-out forwards; }
+    .d1 { animation-delay: 0.1s; } .d2 { animation-delay: 0.35s; }
+    .d3 { animation-delay: 0.6s; } .d4 { animation-delay: 0.85s; }
+    @keyframes fade { to { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flight, .pulse { animation: none; }
+      .fadein { opacity: 1; animation: none; }
+    }
+  </style>
+
+  <!-- background -->
+  <rect width="900" height="240" rx="18" fill="#14222D"/>
+
+  <!-- faint dot grid -->
+  <g fill="#1E3140">
+    <circle cx="60" cy="40" r="1.5"/><circle cx="140" cy="70" r="1.5"/><circle cx="90" cy="130" r="1.5"/>
+    <circle cx="200" cy="180" r="1.5"/><circle cx="320" cy="210" r="1.5"/><circle cx="420" cy="40" r="1.5"/>
+    <circle cx="520" cy="190" r="1.5"/><circle cx="700" cy="210" r="1.5"/><circle cx="840" cy="60" r="1.5"/>
+    <circle cx="780" cy="150" r="1.5"/><circle cx="620" cy="30" r="1.5"/><circle cx="30" cy="200" r="1.5"/>
+  </g>
+
+  <!-- left: identity -->
+  <g class="fadein d1">
+    <rect x="48" y="42" width="150" height="24" rx="12" fill="none" stroke="#C89217" stroke-width="1"/>
+    <circle cx="63" cy="54" r="3.5" fill="#C89217" class="pulse"/>
+    <text x="76" y="58" class="status">OPEN TO WORK</text>
+  </g>
+
+  <text x="48" y="118" class="name fadein d2">Etka Turan</text>
+  <text x="48" y="150" class="role fadein d3">CREATIVE DEVELOPER · CS GRADUATE</text>
+  <text x="48" y="186" class="sub fadein d4">$ from Almaty, KZ — building in Germany, DE</text>
+
+  <!-- right: signature journey arc -->
+  <g class="fadein d3">
+    <path class="flight" d="M 830 190 C 760 60, 620 45, 545 105"/>
+    <circle cx="830" cy="190" r="5" fill="#C89217"/>
+    <circle cx="545" cy="105" r="5" fill="#2E86C8" class="pulse"/>
+    <text x="770" y="212" class="coord">43.2°N 76.9°E</text>
+    <text x="505" y="90" class="coord">50.1°N 8.6°E</text>
+  </g>
+</svg>
