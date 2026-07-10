@@ -1,0 +1,45 @@
+<svg viewBox="0 0 1000 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tech stack terminal listing">
+  <style>
+    .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size: 15px; }
+    .cmd { fill: #e6edf3; }
+    .key { fill: #22d3ee; }
+    .arrow { fill: #a78bfa; }
+    .val { fill: #9fb1c1; }
+    .cmt { fill: #565e6b; }
+    .ln { opacity: 0; animation: reveal 0.01s linear forwards; }
+    @keyframes reveal { to { opacity: 1; } }
+    .l0 { animation-delay: 0.2s; } .l1 { animation-delay: 0.6s; } .l2 { animation-delay: 1.0s; }
+    .l3 { animation-delay: 1.4s; } .l4 { animation-delay: 1.8s; } .l5 { animation-delay: 2.2s; }
+    .l6 { animation-delay: 2.6s; } .l7 { animation-delay: 3.0s; } .l8 { animation-delay: 3.4s; }
+    .cursor { opacity: 0; animation: on 0.01s linear 3.8s forwards, blink 1.1s steps(1) 3.8s infinite; }
+    @keyframes on { to { opacity: 1; } }
+    @keyframes blink { 0%,49% { fill: #22d3ee; } 50%,100% { fill: transparent; } }
+    @media (prefers-reduced-motion: reduce) { .ln, .cursor { animation: none; opacity: 1; } }
+  </style>
+
+  <!-- window -->
+  <rect x="0.5" y="0.5" width="999" height="379" rx="12" fill="#0b0e14" stroke="#1c2230"/>
+  <rect x="0.5" y="0.5" width="999" height="42" rx="12" fill="#0d1220"/>
+  <rect x="0.5" y="30" width="999" height="13" fill="#0d1220"/>
+  <line x1="0.5" y1="42.5" x2="999.5" y2="42.5" stroke="#1c2230"/>
+  <circle cx="26" cy="21" r="6" fill="#ff5f57"/>
+  <circle cx="48" cy="21" r="6" fill="#febc2e"/>
+  <circle cx="70" cy="21" r="6" fill="#28c840"/>
+  <text x="500" y="26" text-anchor="middle" class="mono cmt" font-size="13">etka@dev: ~/stack</text>
+
+  <!-- lines -->
+  <g class="mono">
+    <text x="36" y="84" class="ln l0"><tspan class="key">$</tspan><tspan class="cmd" dx="10">etka --stack --verbose</tspan></text>
+
+    <text x="36" y="122" class="ln l1"><tspan class="key">frontend</tspan><tspan class="arrow" x="196">→</tspan><tspan class="val" x="226">React · Next.js · TypeScript · Vite · Tailwind CSS · Framer Motion</tspan></text>
+    <text x="36" y="152" class="ln l2"><tspan class="key">backend</tspan><tspan class="arrow" x="196">→</tspan><tspan class="val" x="226">Python · FastAPI · Flask · Node.js · REST API design · JWT auth</tspan></text>
+    <text x="36" y="182" class="ln l3"><tspan class="key">ai / ml</tspan><tspan class="arrow" x="196">→</tspan><tspan class="val" x="226">LangChain · Groq · LLaMA 3 · Whisper · OpenCV · NER · prompt engineering</tspan></text>
+    <text x="36" y="212" class="ln l4"><tspan class="key">databases</tspan><tspan class="arrow" x="196">→</tspan><tspan class="val" x="226">PostgreSQL · Neo4j · SQLite · pgvector · SQL / ORM</tspan></text>
+    <text x="36" y="242" class="ln l5"><tspan class="key">devops</tspan><tspan class="arrow" x="196">→</tspan><tspan class="val" x="226">Docker · AWS · Vercel · GitHub Actions · CI/CD · Linux</tspan></text>
+    <text x="36" y="272" class="ln l6"><tspan class="key">testing</tspan><tspan class="arrow" x="196">→</tspan><tspan class="val" x="226">Pytest · Vitest · Jest · unit &amp; integration testing</tspan></text>
+    <text x="36" y="302" class="ln l7"><tspan class="key">desktop</tspan><tspan class="arrow" x="196">→</tspan><tspan class="val" x="226">Tauri (Rust shell) · Edge TTS · offline Kokoro-82M</tspan></text>
+    <text x="36" y="332" class="ln l8"><tspan class="key">languages</tspan><tspan class="arrow" x="196">→</tspan><tspan class="val" x="226">English C2 · Turkish C2 · Kazakh B2 · German B1 · Russian B1</tspan></text>
+
+    <rect class="cursor" x="36" y="348" width="9" height="17"/>
+  </g>
+</svg>
