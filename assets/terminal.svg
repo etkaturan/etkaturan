@@ -1,0 +1,53 @@
+<svg width="700" height="260" viewBox="0 0 700 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Terminal: whoami — Etka, creative developer, open to work">
+  <style>
+    .t { font: 500 15px 'Cascadia Code', 'JetBrains Mono', Consolas, monospace; }
+    .prompt { fill: #C89217; }
+    .cmd { fill: #E8EEF2; }
+    .out { fill: #7E93A3; }
+    .hl { fill: #2E86C8; }
+    .ok { fill: #4EC994; }
+
+    .l { animation: show 0.01s linear backwards; }
+    .l1 { animation-delay: 0.4s; } .l2 { animation-delay: 1.1s; }
+    .l3 { animation-delay: 2.0s; } .l4 { animation-delay: 2.7s; }
+    .l5 { animation-delay: 3.6s; } .l6 { animation-delay: 4.3s; }
+    .l7 { animation-delay: 5.2s; }
+    @keyframes show { from { opacity: 0; } to { opacity: 1; } }
+
+    .cursor { fill: #C89217; animation: blink 1.1s steps(1) infinite; }
+    @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+    .dotpulse { animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .l { animation: none; opacity: 1; }
+      .cursor { animation: none; opacity: 1; }
+      .dotpulse { animation: none; }
+    }
+  </style>
+
+  <!-- window -->
+  <rect x="1" y="1" width="698" height="258" rx="14" fill="#14222D" stroke="#1E3140" stroke-width="2"/>
+
+  <!-- title bar -->
+  <rect x="1" y="1" width="698" height="40" rx="14" fill="#0F1A23"/>
+  <rect x="1" y="27" width="698" height="14" fill="#0F1A23"/>
+  <circle cx="26" cy="21" r="6" fill="#E5604C"/>
+  <circle cx="48" cy="21" r="6" fill="#C89217"/>
+  <circle cx="70" cy="21" r="6" fill="#4EC994"/>
+  <text x="350" y="26" text-anchor="middle" class="t out" font-size="13">etka@dev: ~</text>
+
+  <!-- session -->
+  <text x="28" y="76" class="t l l1"><tspan class="prompt">$ </tspan><tspan class="cmd">whoami</tspan></text>
+  <text x="28" y="100" class="t l l2"><tspan class="out">Etka Turan — </tspan><tspan class="hl">creative developer</tspan><tspan class="out">, CS graduate</tspan></text>
+
+  <text x="28" y="136" class="t l l3"><tspan class="prompt">$ </tspan><tspan class="cmd">locate etka</tspan></text>
+  <text x="28" y="160" class="t l l4"><tspan class="out">Germany 🇩🇪  (shipped from Almaty, Kazakhstan 🇰🇿)</tspan></text>
+
+  <text x="28" y="196" class="t l l5"><tspan class="prompt">$ </tspan><tspan class="cmd">systemctl status etka</tspan></text>
+  <text x="28" y="220" class="t l l6"><tspan class="ok dotpulse">● active</tspan><tspan class="out"> — open to full-time &amp; freelance work</tspan></text>
+
+  <text x="28" y="248" class="t l l7"><tspan class="prompt">$ </tspan></text>
+  <rect x="46" y="236" width="9" height="16" class="cursor"/>
+</svg>
