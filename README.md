@@ -49,7 +49,7 @@ I'm **Etka** — a Computer Science graduate who moved from **Almaty, Kazakhstan
 | 🎓 **Degree** | B.Sc. Computer Science |
 | 🟢 **Status** | Open to work |
 | 🗣️ **Languages** | EN · DE · KK · RU · TR |
-| 🌐 **Portfolio** | [etkaturan.github.io](https://etkaturan.github.io) |
+| 🌐 **Portfolio** | [etkaturan-portfolio](https://etkaturan-portfolio.vercel.app/) |
 | ✍️ **Writing** | [dev.to/etkaturan](https://dev.to) <!-- TODO --> |
 
 </td>
@@ -58,7 +58,7 @@ I'm **Etka** — a Computer Science graduate who moved from **Almaty, Kazakhstan
 
 <div align="center">
 
-<a href="https://github.com/etkaturan/portfolio-etka">
+<a href="https://etkaturan-portfolio.vercel.app/">
 <img src="./assets/terminal.svg" width="700" alt="Terminal session: whoami — Etka Turan, status: open to work. Click to visit my portfolio project." />
 </a>
 
@@ -111,7 +111,7 @@ I'm **Etka** — a Computer Science graduate who moved from **Almaty, Kazakhstan
 | 🔐 [**Face-Authentication-App**](https://github.com/etkaturan/Face-Authentication-App) | Face-authenticated login system for web apps | `JavaScript` | ✅ Live |
 | 💰 [**VaultSpring**](https://github.com/etkaturan/VaultSpring-web-app-) | Finance management web app with advanced functions | `JavaScript` | ✅ Live |
 | 🧠 [**AI Spatial Hypertext**](https://github.com/etkaturan/ai-supported-spatial-hypertext-) | AI-supported spatial hypertext knowledge system | `Python` | 🔨 Active |
-| 🌐 [**Portfolio**](https://github.com/etkaturan/portfolio-etka) | Personal portfolio website | `JavaScript` | ✅ Live |
+| 🌐 [**Portfolio**](https://etkaturan-portfolio.vercel.app/) | Personal portfolio website | `JavaScript` | ✅ Live |
 
 ## 🚧 Currently
 
@@ -152,9 +152,7 @@ I'm **Etka** — a Computer Science graduate who moved from **Almaty, Kazakhstan
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=etkaturan&show_icons=true&hide_border=true&count_private=true&bg_color=14222D&title_color=2E86C8&icon_color=C89217&text_color=E8EEF2" alt="GitHub stats" />&nbsp;
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=etkaturan&layout=compact&hide_border=true&bg_color=14222D&title_color=2E86C8&text_color=E8EEF2" alt="Top languages" />
-
+<img src="./assets/metrics.svg" width="100%" alt="GitHub metrics" />
 <img src="https://streak-stats.demolab.com?user=etkaturan&hide_border=true&background=14222D&ring=C89217&fire=C89217&currStreakLabel=2E86C8&currStreakNum=E8EEF2&sideNums=E8EEF2&sideLabels=7E93A3&dates=5E7486" alt="Contribution streak" />
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=etkaturan&hide_border=true&bg_color=14222D&color=2E86C8&line=C89217&point=FFFFFF&area=true&title_color=2E86C8" alt="Contribution activity" width="100%" />
@@ -182,7 +180,7 @@ If you have a project in mind or a role to fill — my inbox is open. ⭐ **Feel
 
 <a href="mailto:your@email.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
 <a href="https://linkedin.com/in/YOUR_LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-<a href="https://etkaturan.github.io"><img src="https://img.shields.io/badge/Portfolio-C89217?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio"/></a>
+<a href="https://etkaturan-portfolio.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-C89217?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio"/></a>
 
 <br/><br/>
 
