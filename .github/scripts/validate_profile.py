@@ -73,7 +73,7 @@ def check_readme_assets() -> None:
     """
     print("\nREADME asset references")
     readme = open("README.md", encoding="utf-8").read()
-    refs = sorted(set(re.findall(r'(?:src|srcset)="(assets/[^"]+)"', readme)))
+    refs = sorted(set(re.findall(r"""(?:src|srcset)=["'](assets/[^"']+)["']""", readme)))
 
     if not refs:
         fail("readme-assets", "no asset references found — did the pattern break?")
