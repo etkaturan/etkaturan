@@ -212,6 +212,52 @@ def check_embedded_shell(workflows: dict[str, dict]) -> None:
         notes.append("no run: blocks found")
 
 
+GENERATED_ASSETS = sorted(
+    set(glob.glob("assets/stats/*.svg")) | set(glob.glob("assets/pacman/*.svg"))
+)
+    "assets/stats/overview.svg",
+    "assets/stats/languages.svg",
+    "assets/stats/streak.svg",
+    "assets/pacman/pacman-contribution-graph.svg",
+    "assets/pacman/pacman-contribution-graph-dark.svg",
+]
+
+PLACEHOLDER_MARKERS = ("pending first run", "Awaiting first mirror")
+
+
+def check_placeholders_replaced() -> None:
+    """Warn if a generated card is still showing its placeholder.
+
+    The placeholders exist so the profile degrades gracefully before a
+    workflow has run, and so stats-mirror can refuse to overwrite good data
+    with an error page. The failure mode they introduce is silence: if a
+    workflow stops running, the card quietly says "pending first run"
+    forever and nothing complains.
+
+    This warns rather than fails. A placeholder is the correct state
+    immediately after adding a new card, so failing would block the very PR
+    that introduces one.
+    """
+    print("\nPlaceholder replacement")
+    stale = []
+    for path in GENERATED_ASSETS:
+        if not os.path.isfile(path):
+            continue
+        with open(path, encoding="utf-8") as handle:
+            content = handle.read()
+        if any(marker in content for marker in PLACEHOLDER_MARKERS):
+            stale.append(path)
+            print(f"  warn  {path} is still a placeholder")
+        else:
+            ok(f"{path} has real data")
+
+    if stale:
+        notes.append(
+            f"{len(stale)} generated card(s) still showing placeholders: "
+            + ", ".join(stale)
+        )
+
+
 def main() -> int:
     os.chdir(REPO_ROOT)
     print(f"Validating {REPO_ROOT}")
@@ -223,6 +269,7 @@ def main() -> int:
     check_workflows_parse(workflows)
     check_cron_collisions(workflows)
     check_embedded_shell(workflows)
+    check_placeholders_replaced()
 
     print("\n" + "=" * 60)
     if failures:
