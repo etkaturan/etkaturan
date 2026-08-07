@@ -212,7 +212,9 @@ def check_embedded_shell(workflows: dict[str, dict]) -> None:
         notes.append("no run: blocks found")
 
 
-GENERATED_ASSETS = [
+GENERATED_ASSETS = sorted(
+    set(glob.glob("assets/stats/*.svg")) | set(glob.glob("assets/pacman/*.svg"))
+)
     "assets/stats/overview.svg",
     "assets/stats/languages.svg",
     "assets/stats/streak.svg",
