@@ -243,7 +243,8 @@ def check_placeholders_replaced() -> None:
     for path in GENERATED_ASSETS:
         if not os.path.isfile(path):
             continue
-        content = open(path, encoding="utf-8").read()
+        with open(path, encoding="utf-8") as handle:
+            content = handle.read()
         if any(marker in content for marker in PLACEHOLDER_MARKERS):
             stale.append(path)
             print(f"  warn  {path} is still a placeholder")
