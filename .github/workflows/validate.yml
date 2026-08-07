@@ -1,0 +1,37 @@
+name: Validate profile
+
+# Runs the repo's own regression suite on every pull request.
+#
+# Each check in validate_profile.py maps to something that actually broke on
+# the live profile — broken README image references, and two workflows racing
+# on a shared cron. Both were mechanically detectable and neither was caught,
+# because nothing ran before merge.
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Validate profile
+        run: python .github/scripts/validate_profile.py
