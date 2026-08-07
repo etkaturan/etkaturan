@@ -100,12 +100,12 @@
 
 ## Contribution Graph
 
-<!-- Generated daily by .github/workflows/pacman.yml -->
+<!-- Generated daily by .github/workflows/pacman.yml, committed into this
+     repo rather than published to a separate branch. -->
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/etkaturan/etkaturan/output/pacman-contribution-graph-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/etkaturan/etkaturan/output/pacman-contribution-graph.svg" />
-    <img src="https://raw.githubusercontent.com/etkaturan/etkaturan/output/pacman-contribution-graph-dark.svg" alt="Pac-Man eating a year of GitHub contributions, rendered as an animated arcade game" width="100%" />
+    <source media="(prefers-color-scheme: light)" srcset="assets/pacman/pacman-contribution-graph.svg" />
+    <img src="assets/pacman/pacman-contribution-graph-dark.svg" alt="Pac-Man eating a year of GitHub contributions, rendered as an animated arcade game" width="100%" />
   </picture>
 </div>
 

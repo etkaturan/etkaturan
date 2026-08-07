@@ -1,0 +1,27 @@
+# Normalise line endings.
+#
+# Without this, editing a file on Windows silently rewrites every line to
+# CRLF, and git then reports the whole file as changed even when nothing
+# meaningful did. That already happened once to snake.yml — a 32-line file
+# showed up as 32 deletions and 32 additions.
+#
+# `text=auto eol=lf` stores everything as LF in the repository regardless of
+# which OS wrote it. Shell scripts embedded in workflow `run:` blocks need
+# this in particular: a CRLF script fails on the Ubuntu runner with a
+# confusing "$'\r': command not found".
+
+* text=auto eol=lf
+
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.md   text eol=lf
+*.svg  text eol=lf
+*.sh   text eol=lf
+
+# Don't try to diff or normalise binaries.
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.woff  binary
+*.woff2 binary

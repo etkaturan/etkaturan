@@ -1,0 +1,17 @@
+<svg viewBox="0 0 495 195" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub stats card is pending its first scheduled refresh">
+  <style>
+    .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+    .ttl { font-size: 15px; font-weight: 600; fill: #22d3ee; }
+    .sub { font-size: 11px; fill: #9fb1c1; }
+    .dim { font-size: 10px; fill: #565e6b; }
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+    @media (prefers-reduced-motion: reduce) { .pulse { animation: none; } }
+  </style>
+  <rect x="1" y="1" width="493" height="193" rx="10" fill="#070707" stroke="#1f2630" stroke-width="2"/>
+  <circle cx="32" cy="40" r="5" fill="#22d3ee" class="pulse"/>
+  <text x="50" y="45" class="mono ttl">GitHub Stats</text>
+  <text x="32" y="88" class="mono sub">Awaiting first mirror run.</text>
+  <text x="32" y="110" class="mono dim">Refreshed daily by .github/workflows/stats-mirror.yml</text>
+  <text x="32" y="128" class="mono dim">and served from this repo, not a third-party host.</text>
+</svg>
