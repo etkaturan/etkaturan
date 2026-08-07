@@ -1,0 +1,10 @@
+# Adds a "Sponsor" button to this repository.
+#
+# Everything below is commented out, so this file is currently inert — it
+# changes nothing until you uncomment a line. Uncomment `github:` only after
+# you have actually enabled GitHub Sponsors on your account, otherwise the
+# button links to a 404.
+#
+# github: [etkaturan]
+# buy_me_a_coffee: etkaturan
+# custom: ["https://etkaturan-portfolio.vercel.app"]

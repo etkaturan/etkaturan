@@ -3,19 +3,28 @@ name: Generate profile metrics
 on:
   schedule:
     - cron: "0 2 * * *"   # daily at 02:00 UTC
-  workflow_dispatch:        # manual run from the Actions tab
+  workflow_dispatch:      # manual run from the Actions tab
   # NOTE: no push trigger on purpose — the action commits to main,
   # which would re-trigger itself in an endless loop.
 
 permissions:
   contents: write
 
+concurrency:
+  group: profile-metrics
+  cancel-in-progress: true
+
 jobs:
   metrics:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Generate metrics SVG
-        uses: lowlighter/metrics@latest
+        # Pinned to the v3.34 release instead of @latest. `@latest` is a
+        # moving branch, and this action runs with a PAT — an upstream
+        # compromise would inherit that token. To pin harder still:
+        #   gh api repos/lowlighter/metrics/commits/v3.34 --jq .sha
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: etkaturan
@@ -23,14 +32,18 @@ jobs:
           template: classic
           config_timezone: Europe/Berlin
 
+          # Don't leave a half-written SVG behind if a plugin errors out.
+          plugin_errors_fatal: yes
+          committer_message: "chore(metrics): refresh profile metrics [skip ci]"
+
           # base sections
           base: header, activity, community, repositories
 
-          # top languages (replaces the broken top-langs widget)
+          # top languages
           plugin_languages: yes
           plugin_languages_limit: 6
-          plugin_languages_colors: "#2E86C8, #C89217, #4EC994, #E5604C, #7E93A3, #E8EEF2"
+          plugin_languages_colors: "#22d3ee, #a78bfa, #39d353, #e5604c, #9fb1c1, #e8eef2"
 
-          # contribution calendar (replaces the activity graph widget)
+          # contribution calendar
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year

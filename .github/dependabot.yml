@@ -1,0 +1,16 @@
+version: 2
+updates:
+  # Keeps the third-party Actions in .github/workflows pinned AND current.
+  # Pinning without automated updates just means running stale code forever;
+  # this is the other half of that trade.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    commit-message:
+      prefix: "chore(ci)"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    open-pull-requests-limit: 5

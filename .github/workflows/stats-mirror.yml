@@ -1,0 +1,99 @@
+name: Mirror external stat cards
+
+# WHY THIS EXISTS
+# ---------------
+# The stats and streak cards are rendered by third-party services
+# (github-stats-extended.vercel.app, streak-stats.demolab.com). Markdown has
+# no onerror hook, so if one of those goes down the README just shows broken
+# images. This workflow fetches each card once a day and commits the SVG into
+# assets/, and the README points at the LOCAL copy.
+#
+# The important part is the validation: a fetch is only allowed to overwrite
+# the committed file if it actually looks like a good card. A 500 page, a
+# rate-limit stub, or a truncated response is rejected and the previous
+# known-good SVG stays exactly where it is. Worst case the numbers go stale;
+# the profile never breaks.
+
+on:
+  schedule:
+    - cron: "30 2 * * *"   # daily at 02:30 UTC, after the metrics run
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stats-mirror
+  cancel-in-progress: true
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch and validate cards
+        env:
+          USER_NAME: etkaturan
+        run: |
+          set -uo pipefail
+          mkdir -p assets/stats
+
+          # fetch_card <output-path> <url>
+          fetch_card() {
+            local dest="$1" url="$2" tmp
+            tmp="$(mktemp)"
+
+            local code
+            code=$(curl -sS -L --max-time 30 --retry 3 --retry-delay 5 \
+                        -w '%{http_code}' -o "$tmp" "$url" || echo "000")
+
+            if [ "$code" != "200" ]; then
+              echo "::warning::$dest — HTTP $code, keeping previous copy"
+              rm -f "$tmp"; return 0
+            fi
+
+            # Must be a real SVG document.
+            if ! grep -qi '<svg' "$tmp"; then
+              echo "::warning::$dest — response is not SVG, keeping previous copy"
+              rm -f "$tmp"; return 0
+            fi
+
+            # These services return HTTP 200 with an error card painted into
+            # the SVG, so status code alone is not enough.
+            if grep -qiE 'Something went wrong|Maximum retries exceeded|rate limit|Bad credentials' "$tmp"; then
+              echo "::warning::$dest — service returned an error card, keeping previous copy"
+              rm -f "$tmp"; return 0
+            fi
+
+            # A healthy card is comfortably over 1 KB; anything smaller is a stub.
+            if [ "$(wc -c < "$tmp")" -lt 1024 ]; then
+              echo "::warning::$dest — response too small ($(wc -c < "$tmp") bytes), keeping previous copy"
+              rm -f "$tmp"; return 0
+            fi
+
+            mv "$tmp" "$dest"
+            echo "✓ $dest updated ($(wc -c < "$dest") bytes)"
+          }
+
+          fetch_card assets/stats/overview.svg \
+            "https://github-stats-extended.vercel.app/api?username=${USER_NAME}&show_icons=true&hide_border=true&bg_color=070707&title_color=22d3ee&icon_color=a78bfa&text_color=c9d1d9&ring_color=22d3ee&rank_icon=github"
+
+          fetch_card assets/stats/languages.svg \
+            "https://github-stats-extended.vercel.app/api/top-langs/?username=${USER_NAME}&layout=compact&hide_border=true&bg_color=070707&title_color=22d3ee&text_color=c9d1d9&langs_count=8"
+
+          fetch_card assets/stats/streak.svg \
+            "https://streak-stats.demolab.com?user=${USER_NAME}&hide_border=true&background=070707&ring=22d3ee&fire=a78bfa&currStreakLabel=22d3ee&sideLabels=c9d1d9&currStreakNum=e6edf3&sideNums=e6edf3&dates=8b949e"
+
+      - name: Commit refreshed cards
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/stats
+          if git diff --staged --quiet; then
+            echo "No card changed today."
+          else
+            git commit -m "chore(stats): refresh mirrored stat cards [skip ci]"
+            git push
+          fi
