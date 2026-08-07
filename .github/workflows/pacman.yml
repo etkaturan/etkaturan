@@ -27,7 +27,7 @@ jobs:
         # can't silently alter this profile. To harden further, replace the
         # tag with its commit SHA:
         #   gh api repos/abozanona/pacman-contribution-graph/commits/v5.0.0 --jq .sha
-        uses: abozanona/pacman-contribution-graph@v5.0.0
+        uses: abozanona/pacman-contribution-graph@v5.3.2
         with:
           github_user_name: ${{ github.repository_owner }}
           # Comma-separated. Other options: breakout, galaga,
