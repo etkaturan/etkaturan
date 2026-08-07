@@ -1,0 +1,27 @@
+<svg viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pac-Man contribution graph is pending its first scheduled generation">
+  <style>
+    .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+    .ttl { font-size: 18px; font-weight: 600; fill: #22d3ee; }
+    .sub { font-size: 13px; fill: #9fb1c1; }
+    .dim { font-size: 11px; fill: #565e6b; }
+    .chomp { animation: chomp 0.5s ease-in-out infinite alternate; transform-origin: 60px 100px; }
+    @keyframes chomp { from { transform: rotate(0deg); } to { transform: rotate(-18deg); } }
+    @media (prefers-reduced-motion: reduce) { .chomp { animation: none; } }
+  </style>
+
+  <rect x="1" y="1" width="998" height="198" rx="12" fill="#070707" stroke="#1f2630" stroke-width="2"/>
+
+  <!-- pac-man -->
+  <path class="chomp" d="M60 78 A22 22 0 1 0 60 122 L60 100 Z" fill="#22d3ee" transform="rotate(0 60 100)"/>
+  <circle cx="60" cy="100" r="22" fill="#22d3ee"/>
+  <path class="chomp" d="M60 100 L86 84 L86 116 Z" fill="#070707"/>
+
+  <!-- pellets -->
+  <circle cx="120" cy="100" r="4" fill="#a78bfa"/>
+  <circle cx="150" cy="100" r="4" fill="#a78bfa"/>
+  <circle cx="180" cy="100" r="4" fill="#565e6b"/>
+
+  <text x="230" y="92" class="mono ttl">Contribution graph pending first run</text>
+  <text x="230" y="118" class="mono sub">Generated daily by .github/workflows/pacman.yml</text>
+  <text x="230" y="140" class="mono dim">Actions tab → "Generate pacman contribution graph" → Run workflow</text>
+</svg>
