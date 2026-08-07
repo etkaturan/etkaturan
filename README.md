@@ -74,13 +74,6 @@
 
 ## GitHub Analytics
 
-<!-- Generated daily by .github/workflows/metrics.yml -->
-<div align="center">
-  <img src="assets/metrics.svg" alt="Profile metrics: activity, community stats, repository overview, top languages and a six-month contribution calendar" width="100%" />
-</div>
-
-<br/>
-
 <!-- Mirrored daily by .github/workflows/stats-mirror.yml.
      Served from this repo, not from the upstream service, so an outage
      upstream leaves the last known-good card in place instead of a
