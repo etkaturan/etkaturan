@@ -110,7 +110,7 @@
 
 <a href="mailto:m.etka.turan@gmail.com"><img src="https://img.shields.io/badge/Email-m.etka.turan@gmail.com-070707?style=for-the-badge&logo=gmail&logoColor=22d3ee" alt="Email" /></a>
 &nbsp;
-<a href="https://linkedin.com/in/etka-turan"><img src="https://img.shields.io/badge/LinkedIn-etka--turan-070707?style=for-the-badge&logo=linkedin&logoColor=22d3ee" alt="LinkedIn" /></a>
+<a href="https://linkedin.com/in/etkaturan/"><img src="https://img.shields.io/badge/LinkedIn-etka--turan-070707?style=for-the-badge&logo=linkedin&logoColor=22d3ee" alt="LinkedIn" /></a>
 &nbsp;
 <a href="https://etkaturan.vercel.app"><img src="https://img.shields.io/badge/Portfolio-etkaturan.vercel.app-070707?style=for-the-badge&logo=vercel&logoColor=22d3ee" alt="Portfolio" /></a>
 
