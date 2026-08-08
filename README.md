@@ -11,7 +11,7 @@
 
 <div align="center">
 
-<a href="https://etkaturan-portfolio.vercel.app">
+<a href="https://etkaturan.vercel.app">
   <img src="assets/banner.svg" alt="Mekhmetetka Turan — Full-Stack Developer & AI Engineer" width="100%" />
 </a>
 
@@ -55,8 +55,8 @@
       </a>
     </td>
     <td width="50%">
-      <a href="https://etkaturan-portfolio.vercel.app">
-        <img src="assets/projects/portfolio-card.svg" alt="Portfolio — etkaturan-portfolio.vercel.app" width="100%" />
+      <a href="https://etkaturan.vercel.app">
+        <img src="assets/projects/portfolio-card.svg" alt="Portfolio — etkaturan.vercel.app" width="100%" />
       </a>
     </td>
   </tr>
@@ -112,6 +112,6 @@
 &nbsp;
 <a href="https://linkedin.com/in/etka-turan"><img src="https://img.shields.io/badge/LinkedIn-etka--turan-070707?style=for-the-badge&logo=linkedin&logoColor=22d3ee" alt="LinkedIn" /></a>
 &nbsp;
-<a href="https://etkaturan-portfolio.vercel.app"><img src="https://img.shields.io/badge/Portfolio-etkaturan--portfolio.vercel.app-070707?style=for-the-badge&logo=vercel&logoColor=22d3ee" alt="Portfolio" /></a>
+<a href="https://etkaturan.vercel.app"><img src="https://img.shields.io/badge/Portfolio-etkaturan.vercel.app-070707?style=for-the-badge&logo=vercel&logoColor=22d3ee" alt="Portfolio" /></a>
 
 </div>
